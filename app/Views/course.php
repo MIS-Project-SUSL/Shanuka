@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background-color: #2c3e50; 
+    background-color:#f2eeed; 
     padding: 5px 20px; 
     display: flex; 
     justify-content: space-between; 
@@ -51,7 +51,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none; 
-    color: #ecf0f1; 
+    color: black; 
     font-size: 1.2em; 
     transition: color 0.3s ease; 
 }
@@ -61,7 +61,7 @@ nav ul li a {
  }
 
 nav ul li a:hover {
-    color: #f5f2f2; 
+    
 }
 
 nav ul li::after {
@@ -156,26 +156,41 @@ main {
 }
 
 
+
 footer {
-   
-    background-color: black;
-    padding: 20px;
+    background-color:black;
+    padding: 10px;
     text-align: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    
     color: white;
+}
+ 
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000; /* Dark background color for the footer */
+    color: #fff;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 footer .contact, footer .about, footer .follow {
     flex: 1;
     padding: 10px;
+    min-width: 250px; /* Ensures sections stack properly on smaller screens */
 }
 
 footer img {
     width: 20px;
-    margin: 0 5px;
+    margin: 0 10px;
 }
+
+.contact p, .about p {
+    text-align: left;
+}
+
 
 .copyright {
     position: relative;
@@ -221,7 +236,7 @@ footer img {
             
             <div class="year">
                 <div class="year-item">
-                    <a href="course/year1">
+                    <a href="course_year1">
                         <h4>Year 1</h4>
                         <img src="courses.png" alt="Year 1" >
                     </a>

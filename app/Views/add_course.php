@@ -9,7 +9,7 @@
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        background-color: rgb(199, 161, 199);
+        background-color: rgb(230, 221, 221);
     }
     .header {
         display: flex;
