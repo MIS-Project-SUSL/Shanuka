@@ -58,11 +58,16 @@
             position: absolute;
             top: 25%;
             left: 20%;
+            overflow:auto;
+           
             
         h2{
             text-align: center;
         }    
         }
+        
+            
+        
         .header1 {
             display: flex;
             justify-content: center;
@@ -104,10 +109,12 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            overflow:auto;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
+        
         th, td {
             padding: 10px;
             text-align: left;
@@ -184,9 +191,10 @@
             <button>Search</button>
         </div>
         <div class="add-course">
-            <button>+ Add Course</button>
+           <a href="add_course"><button>+ Add Course</button></a> 
         </div>
-        <table>
+        
+         <table>
             <thead>
                 <tr>
                     <th>Course Details</th>
@@ -196,7 +204,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
+                <?php foreach ($courses as $course): ?>
+                    <td><?= $course['course_code'] ?></td>
                     <td>
                         <select class="status-dropdown">
                             <option value="active">Active</option>
@@ -210,8 +219,12 @@
                         </i>
                     </td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
+
         </table>
+        </div>
+        
     </div>
 </body>    
 </html>

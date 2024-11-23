@@ -35,4 +35,11 @@ class CourseController extends Controller
         
         return redirect()->to('http://localhost/new-project/public/add_course')->with('success', 'Course added successfully');
     }
+    public function display()
+    {
+        $courseModel = new CourseModel();
+        $data['courses'] = $courseModel->getAllCourses(); // Fetch all courses using the model method
+
+        return view('course_management', $data); // Load the view 'courses_list.php' and pass $data to it
+    }
 }

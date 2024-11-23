@@ -15,6 +15,10 @@ $routes->get('course_year2', 'Courseyear2::index');
 $routes->get('course_year3', 'Courseyear3::index');
 $routes->get('course_year4', 'Courseyear4::index');
 
+$routes->get('/courses', 'CourseController::display');
+
+
+
 $routes->post('course/add', 'CourseController::add');
 
 
