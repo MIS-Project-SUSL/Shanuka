@@ -196,8 +196,10 @@
     <div class="container">
         <h2>Course Management</h2>
         <div class="header1">
-            <input type="text" placeholder="Input Course Id...">
-            <button>Search</button>
+        <form action="<?= site_url('search_courses') ?>" method="get">
+            <input type="text" name="course_code" placeholder="Input Course Code...">
+            <button type="submit">Search</button>
+        </form>
         </div>
         <div class="add-course">
            <a href="add_course"><button>+ Add Course</button></a> 

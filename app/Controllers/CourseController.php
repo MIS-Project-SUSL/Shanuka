@@ -53,4 +53,17 @@ class CourseController extends Controller
         // Redirect back to the course list page or wherever appropriate
         return redirect()->to('/courses');
     }
+
+    public function search()
+    {
+        $courseModel = new CourseModel();
+
+        // Get the course code from the GET request
+        $courseCode = $this->request->getGet('course_code');
+
+        // Fetch courses based on course code
+        $data['courses'] = $courseModel->like('course_code', $courseCode)->findAll();
+
+        return view('course_management', $data);
+    }
 }
