@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Management</title>
     
+    <script>
+    function confirmDelete(id) {
+        if (confirm('Are you sure you want to delete this course?')) {
+            document.getElementById('deleteForm_' + id).submit(); // Submit the form
+        }
+    }
+    </script>
+
+
     <style>
  
     body {
@@ -213,9 +222,18 @@
                         </select>
                     </td>
                     <td class="action-icons">
-                        <i class="delete-icon"><img src="recycle-bin.png" alt="" width="20px">
-                        </i>
-                        <i class="edit-icon"><img src="draw.png" alt="" width="20px">
+                        <!-- Delete icon with a form -->
+                        <form id="deleteForm_<?= $course['id'] ?>" method="post" action="/delete_course">
+                            <input type="hidden" name="course_id" value="<?= $course['id'] ?>">
+                            <i class="delete-icon" onclick="confirmDelete(<?= $course['id'] ?>)">
+                                <img src="recycle-bin.png" alt="Delete" width="20px">
+                            </i>
+                        </form>
+                        <!-- Edit icon (you can implement edit functionality similarly) -->
+                        <i class="edit-icon">
+                            <a href="/edit_course/<?= $course['id'] ?>">
+                                <img src="draw.png" alt="Edit" width="20px">
+                            </a>
                         </i>
                     </td>
                 </tr>
@@ -228,6 +246,3 @@
     </div>
 </body>    
 </html>
-
-    
-   

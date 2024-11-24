@@ -16,6 +16,8 @@ $routes->get('course_year3', 'Courseyear3::index');
 $routes->get('course_year4', 'Courseyear4::index');
 
 $routes->get('/courses', 'CourseController::display');
+$routes->post('/delete_course', 'CourseController::delete');
+
 
 
 
